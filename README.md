@@ -15,7 +15,14 @@ If you want to learn in depth: I learned through [this](https://www.udemy.com/sh
 - open 1_first_request.ipynb
 - install packages inside notebook
 
+In the notebook you will find how to start with API requests and explanations with examples 
+about arguments used in these requests. 
+
 ## CONTENT
 
 1. 1_first_request.ipynb
 first notebook containing simple prompts/request to chat gpt
+
+2. 2_color_palette
+python script taking description about color palette, sending it using davinci 003 model by
+API and returning rendered  color palette
