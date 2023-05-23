@@ -21,8 +21,8 @@ about arguments used in these requests.
 ## CONTENT
 
 1. 1_first_request.ipynb
-first notebook containing simple prompts/request to chat gpt
+first notebook containing simple prompts/request - completion requests. Using model-davinci-003
 
 2. 2_color_palette
 python script taking description about color palette, sending it using davinci 003 model by
-API and returning rendered  color palette
+API and returning rendered  color palette. Using completion request and Chat API
