@@ -26,3 +26,6 @@ first notebook containing simple prompts/request - completion requests. Using mo
 2. 2_color_palette
 python script taking description about color palette, sending it using davinci 003 model by
 API and returning rendered  color palette. Using completion request and Chat API
+
+3. 3_gpt-chatbot
+python script with chatbot using gpt-3.5-turbo/gpt-4. CTRL+C exits the script. Additional argument is --personality: it determines personality of a chatbot. Great example of using ChatCompletion API with Python
