@@ -29,3 +29,6 @@ API and returning rendered  color palette. Using completion request and Chat API
 
 3. 3_gpt-chatbot
 python script with chatbot using gpt-3.5-turbo/gpt-4. CTRL+C exits the script. Additional argument is --personality: it determines personality of a chatbot. Great example of using ChatCompletion API with Python
+
+5. 5_counting_tokens
+jupiter notebook explaining how to count tokens and prices per prompt (message to AI model)
