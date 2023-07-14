@@ -52,7 +52,9 @@ def main():
     parser.add_argument('file')
     parser.add_argument("--model", default="gpt-3.5-turbo")
     args = parser.parse_args()
-    print(make_review(args.file, args.model))
+    with open('review.txt', 'w') as f:
+        f.write(make_review(args.file, args.model))
+    print("Review saved in review.txt file")
 
 if __name__ == "__main__":
     #load API key to OPENAI products
