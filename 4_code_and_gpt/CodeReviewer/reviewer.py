@@ -5,6 +5,7 @@
 import openai
 from dotenv import load_dotenv
 import os
+import argparse
 
 #prompt message
 PROMPT = """
@@ -47,7 +48,11 @@ def make_review(file_path, model):
     return make_review_request(content, model)
 
 def main():
-    print(make_review("code_to_review.py", "gpt-3.5-turbo"))
+    parser = argparse.ArgumentParser(description='Simple code reviewer for a file. Writes the review in a review.txt file')
+    parser.add_argument('file')
+    parser.add_argument("--model", default="gpt-3.5-turbo")
+    args = parser.parse_args()
+    print(make_review(args.file, args.model))
 
 if __name__ == "__main__":
     #load API key to OPENAI products
