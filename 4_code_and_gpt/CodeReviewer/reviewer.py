@@ -6,17 +6,6 @@ import openai
 from dotenv import load_dotenv
 import os
 
-#load API key to OPENAI products
-load_dotenv()
-openai.api_key = os.getenv("API")
-
-#code to be reviewed
-
-filecontent = """
-def function_to_be_reviewed(x, y):
-    return x**y
-"""
-
 #prompt message
 PROMPT = """
 You will receive a file's contents as text. 
@@ -36,18 +25,32 @@ Be kind and constructive. Divide code review into two sections:
 
 For each suggested change, include line numbers to which you are reffering (if you do)
 """
+#request function
+def make_review_request(filecontent, model):
+    #messages
+    messages = [
+    {"role": "system", "content": PROMPT}
+    , {"role": "user", "content": f"Code review the following file: {filecontent}"}
+    ]
+    #ChatCompletion
+    response = openai.ChatCompletion.create(
+        model = model
+        , messages = messages
+    )
 
-#messages
+    return response["choices"][0]["message"]["content"]
 
-messages = [
-{"role": "system", "content": PROMPT}
-, {"role": "user", "content": f"Code review the following file: {filecontent}"}
-]
-#ChatCompletion
+#make review function
+def make_review(file_path, model):
+    with open(file_path, 'r') as file:
+        content = file.read()
+    return make_review_request(content, model)
 
-response = openai.ChatCompletion.create(
-    model = "gpt-3.5-turbo"
-    , messages = messages
-)
+def main():
+    print(make_review("code_to_review.py", "gpt-3.5-turbo"))
 
-print(response["choices"][0]["message"]["content"])
+if __name__ == "__main__":
+    #load API key to OPENAI products
+    load_dotenv()
+    openai.api_key = os.getenv("API")
+    main()
