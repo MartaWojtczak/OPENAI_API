@@ -12,7 +12,7 @@ If you want to learn in depth: I learned through [this](https://www.udemy.com/sh
 `API = <your copied key without "">`
 
 - do not share .env file with others (add to .gitignore)
-- open 1_first_request.ipynb
+- open 1_first_request.ipynb (in 1_first_request folder)
 - install packages inside notebook
 
 In the notebook you will find how to start with API requests and explanations with examples 
@@ -20,7 +20,7 @@ about arguments used in these requests.
 
 ## CONTENT
 
-1. 1_first_request.ipynb
+1. 1_first_request
 first notebook containing simple prompts/request - completion requests. Using model-davinci-003
 
 2. 2_color_palette
@@ -32,3 +32,5 @@ python script with chatbot using gpt-3.5-turbo/gpt-4. CTRL+C exits the script. A
 
 5. 5_counting_tokens
 jupiter notebook explaining how to count tokens and prices per prompt (message to AI model)
+
+6. 
