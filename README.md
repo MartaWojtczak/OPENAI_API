@@ -33,4 +33,8 @@ python script with chatbot using gpt-3.5-turbo/gpt-4. CTRL+C exits the script. A
 5. 5_counting_tokens
 jupiter notebook explaining how to count tokens and prices per prompt (message to AI model)
 
-6. 
+6. 6_spotify_playlist
+code making for us a playlist on our spotify account via chat gpt. We provide a description of a playlist, code makes the playlist on our spotify account
+- jupyter notebook file with Chat Completion request to open ai models
+- env file with Spotify client apis and api to openai products (you have to make one for yourself)
+- .Readme file with my notes how to create virtual env
