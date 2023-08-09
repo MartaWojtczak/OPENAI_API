@@ -60,7 +60,9 @@ assert current_user is not None
 #spotify searching engine
 tracks =[]
 for i in playlist:
-    search_results=sp.search(q=i["song"], type="track", limit=1)
+    artist, song = i["artist"], i["song"]
+    query = f"{song} {artist}"
+    search_results=sp.search(q=query, type="track", limit=1)
     tracks.append(search_results["tracks"]["items"][0]["id"])
 
 #spotify create playlist
