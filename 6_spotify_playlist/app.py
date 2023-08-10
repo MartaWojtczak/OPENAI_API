@@ -3,9 +3,17 @@ import spotipy
 from dotenv import dotenv_values
 import openai
 import json
+import argparse
 
+#basic configuration
 config = dotenv_values(".env")
 openai.api_key = config["API"]
+
+#parsing arguments feature
+parser = argparse.ArgumentParser(description="Simple command line argument parser")
+parser.add_argument("-p", type=str, required=True, help="The prompt to describe playlist")
+parser.add_argument("-n", type=int, default=10, help="Number of songs in the playlist")
+args = parser.parse_args()
 
 #### get list of songs from openai model ####
 #function
@@ -41,7 +49,7 @@ def get_playlist(prompt, count=10):
 
     return json.loads(response["choices"][0]["message"]["content"])
 #execute function - get playlist
-playlist=get_playlist("energetic music for yoga practice in a sailing event in the morning", 3)
+playlist=get_playlist(args.p, args.n)
 
 #### spotify part ####
 #connect to spotify
@@ -69,7 +77,7 @@ for i in playlist:
 created_playlist=sp.user_playlist_create(
     current_user["id"], 
     public=False, 
-    name="TEST PLAYLIST"
+    name=args.p
 )
 
 #spotify add songs to playlist
