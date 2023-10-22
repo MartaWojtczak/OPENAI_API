@@ -38,3 +38,13 @@ code making for us a playlist on our spotify account via chat gpt. We provide a 
 - jupyter notebook file with Chat Completion request to open ai models
 - env file with Spotify client apis and api to openai products (you have to make one for yourself)
 - .Readme file with my notes how to create virtual env
+
+7. 7_embeddings_movie_recommender
+an example of working with embeddings via openai model - ada
+- jupiter notebook file with basic embedding example to understand what an embedding is
+- movie recommender project with jupiter notebook and cache file. It recommends movies using embeddings
+
+8. 8_reddit_analysis
+Reddit comments analyser. Choosing topics to analyse (USA cities, companies etc) you can gather the comments concerning the topic and send them to ChatGPT. Giving each comment a score we can make a summary how the city/company is seen nowadays. 
+
+The problem with this project is paid Reddit API - from 30-July-2023. Dynamic changes concerning Reddit API makes the project less atractive/hard to keep up to date. 
